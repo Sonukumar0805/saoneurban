@@ -76,145 +76,56 @@
                          </div>
                     </div>
                     <div class="form-group row"> 
-                        <label class="col-sm-4 text-danger">Salary Details</label>
+                        <label class="col-sm-4 text-danger">Advance Salary </label>
                     </div> 
                     <div class="row">
                         <div class="col-md-1"></div>
                         <div class="col-md-10">
                          <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Date of Joining <span class="text-danger">*</span></label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Date<span class="text-danger">*</span></label>
                             <div class="col-sm-12 col-md-4 mb-10">
                                 <?php 
-                                    $data = array('type'=>'date', 'id'=> 'doj', 'class'=>'form-control', 'required'=> 'true','readonly' => 'true');
+                                    $date = date('Y-m-d');
+                                    $data = array('type'=>'date','name'=> 'date' ,'id'=> 'date', 'class'=>'form-control', 'required'=> 'true','value'=> $date );
                                     echo form_input($data); 
                                 ?>
                             </div>
-                            <label class="col-sm-12 col-md-2 col-form-label">Designation <span class="text-danger">*</span></label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Advance Amount <span class="text-danger">*</span></label>
                             <div class="col-sm-12 col-md-4 mb-10">
-                                <?php 
-                                    $data = array('id'=> 'designation', 'placeholder'=>'Designation', 'class'=>'form-control', 'required' => 'true','readonly' => 'true');
+                                <?php
+                                    $data = array('name' => 'advance','id'=> 'advance', 'placeholder'=>'Advance Amount', 'class'=>'form-control', 'required' => 'true');
                                     echo form_input($data); 
                                 ?>
                             </div>
                          </div>
                         <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Basic Salary <span class="text-danger">*</span></label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Description<span class="text-danger">*</span></label>
                             <div class="col-sm-12 col-md-4 mb-10">
                                 <?php 
-                                    $data = array('name'=>'basic_salary','id'=> 'basic_salary', 'placeholder'=>'Basic Salary', 'class'=>'form-control', 'required'=> 'true','readonly' => 'true');
-                                    echo form_input($data); 
+                                    $data = array('name' => 'description', 'id'=> 'description', 'placeholder'=>'Description', 'class'=>'form-control', 'rows'=>'3','required' => 'true');
+                                    echo form_textarea($data);
                                 ?>
                             </div>
-                            <label class="col-sm-12 col-md-2 col-form-label">Per Day Salary</label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Basic Salary</label>
                             <div class="col-sm-12 col-md-4 mb-10">
                                 <?php 
-                                    $data = array('id'=> 'per_day_salary', 'placeholder'=>'Per Day Salary', 'class'=>'form-control','readonly' => 'true');
-                                    echo form_input($data); 
-                                ?>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">PF</label>
-                            <div class="col-sm-12 col-md-4 mb-10">
-                                <?php 
-                                    $data = array('name'=>'pf','id'=> 'pf', 'placeholder'=>'PF', 'class'=>'form-control','readonly' => 'true');
-                                    echo form_input($data); 
-                                ?>
-                            </div>
-                            <label class="col-sm-12 col-md-2 col-form-label">HRA</label>
-                            <div class="col-sm-12 col-md-4 mb-10">
-                                <?php 
-                                    $data = array('name'=>'hra','id'=> 'hra', 'placeholder'=>'House Rent Allowance', 'class'=>'form-control','readonly' => 'true');
+                                    $data = array('id'=> 'basic_salary', 'placeholder'=>'Basic Salary', 'class'=>'form-control','readonly' => 'true');
                                     echo form_input($data); 
                                 ?>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">ESI</label>
+                            <label class="col-sm-12 col-md-2 col-form-label">Designation</label>
                             <div class="col-sm-12 col-md-4 mb-10">
                                 <?php 
-                                    $data = array('name'=>'esi','id'=> 'esi', 'placeholder'=>'ESI', 'class'=>'form-control','readonly' => 'true');
+                                    $data = array('id'=> 'designation', 'placeholder'=>'Designation', 'class'=>'form-control','readonly' => 'true');
                                     echo form_input($data); 
                                 ?>
                             </div>
-                            <label class="col-sm-12 col-md-2 col-form-label">Company PF No.</label>
-                            <div class="col-sm-12 col-md-4 mb-10">
-                                <?php 
-                                    $data = array( 'id'=> 'company_pf_no', 'placeholder'=>'Company PF No.', 'class'=>'form-control','readonly' => 'true');
-                                    echo form_input($data); 
-                                ?>
-                            </div>
-                       </div>
+                        </div>
                       </div>
                     <div class="col-md-1"></div>
                   </div>
-                  <div class="form-group row"> 
-                        <label class="col-sm-4 text-danger">Pay Salary </label>
-                    </div> 
-                  <div class="row">
-                     <div class="col-md-1"></div>
-                     <div class="col-md-10">
-                        <div class="form-group row">
-                     	 	<label class="col-sm-12 col-md-2 col-form-label">Month & Year <span class="text-danger">*</span></label>
-                            <div class="col-sm-12 col-md-2 mb-10">
-                                <?php 
-                                    $data = array(''=>'Select Month','January'=>'January','February'=>'February','March'=>'March','April'=>'April','May'=>'May','June'=>'June','July'=>'July','August'=>'August','September'=>'September','October'=>'October','November'=>'November','December'=>'December');
-                                    echo form_dropdown('month',$data,'',array('id'=>'month','class'=>'form-control', 'required'=> 'true')); 
-                                ?>
-                            </div>
-                             <div class="col-sm-12 col-md-2 mb-10">
-                                <?php 
-                                    $data = array(''=>'Select Year','2017'=>'2017','2018'=>'2018','2019'=>'2019','2020'=>'2020','2021'=>'2021','2022'=>'2022','2023'=>'2023','2024','2024','2025'=>'2025');
-                                    echo form_dropdown('year',$data,'',array('id'=> 'year', 'class'=>'form-control', 'required'=> 'true')); 
-                                ?>
-                            </div>
-                            <label class="col-sm-12 col-md-2 col-form-label">Working Days <span class="text-danger">*</span></label>
-                            <div class="col-sm-12 col-md-4 mb-10">
-                                <?php 
-                                    $data = array('name' => 'working_days', 'id'=> 'working_days', 'placeholder'=>'Working Days', 'class'=>'form-control', 'required' => 'true');
-                                    echo form_input($data); 
-                                ?>     
-                            </div>
-                       </div>
-                        <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label">Holidays <span class="text-danger">*</span></label>
-                             <div class="col-sm-12 col-md-4 mb-10">
-                                <?php 
-                                    $data = array('name' => 'holidays', 'id'=> 'holidays', 'placeholder'=>'Holidays', 'class'=>'form-control', 'required' => 'true');
-                                    echo form_input($data); 
-                                ?>     
-                            </div>
-                            <label class="col-sm-12 col-md-2 col-form-label"> Paid Leave <span class="text-danger">*</span></label>
-                            <div class="col-sm-12 col-md-4 mb-10">
-                                <?php 
-                                    $data = array('name' => 'paid_leave', 'id'=> 'paid_leave', 'placeholder'=>'Paid Leave', 'class'=>'form-control', 'required'=> 'true');
-                                    echo form_input($data); 
-                                ?>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-12 col-md-2 col-form-label"> Deducted Leave <span class="text-danger">*</span></label>
-                            <div class="col-sm-12 col-md-4 mb-10">
-                                <?php 
-                                    $data = array('name' => 'total_leave', 'id'=> 'total_leave', 'placeholder'=>'Deducted Leave', 'class'=>'form-control', 'required'=> 'true');
-                                    echo form_input($data); 
-                                ?>
-                            </div>
-                            <label class="col-sm-12 col-md-2 col-form-label">Total Salary</label>
-                            <div class="col-sm-12 col-md-4 mb-10">
-                                <?php 
-                                    $data = array('name' =>'total_salary', 'id'=> 'total_salary', 'placeholder'=>'Total Salary', 'class'=>'form-control','readonly' => 'true');
-                                    echo form_input($data); 
-                                ?>
-                            </div>
-                       	</div>
-                        <input type="hidden" name="all_total" id="all_total">
-                        <input type="hidden" name="wdays_amount" id="wdays_amount">
-                        <input type="hidden" name="leave_amount" id="leave_amount">
-                        <input type="hidden" name="paid_salary" id="paid_salary">
-                        <input type="hidden" name="deduction" id="deduction">
-                     </div>
-                   </div>
                     <div class="form-group row">
                         <div class="col-sm-2">
                             <input type="submit" name="addsalary" value="Add Salary" class="btn btn-sn bg-primary">
