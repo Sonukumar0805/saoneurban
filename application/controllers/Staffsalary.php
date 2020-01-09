@@ -15,6 +15,6 @@ class Staffsalary extends CI_Controller{
 	public function advancesalary(){
 		$data['title'] = "Advance Salary";
 		$data['breadcrumb'] = array('dashboard'=>'Dashboard');
-		$this->template->load('staff','advanceysalry',$data);		
+		$this->template->load('staff','advancesalary',$data);		
 	}
 }
