@@ -20,6 +20,25 @@
                             <span class="pcoded-mcaret"></span>
                         </a>
                     </li>
+                    <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation"></div>
+                    <ul class="pcoded-item pcoded-left-item">
+                        <li class="pcoded-hasmenu">
+                            <a href="javascript:void(0)">
+                                <span class="pcoded-micon"><i class="ti-key"></i></span>
+                                <span class="pcoded-mtext"  data-i18n="nav.basic-components.main"> Master Key</span>
+                                <span class="pcoded-mcaret"></span>
+                            </a>
+                            <ul class="pcoded-submenu">
+                                <li class=" ">
+                                    <a href="<?php //echo base_url('staffsalary/advancesalary');?>">
+                                        <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Expense Head </span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 	<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms"><!--Forms &amp; Tables--></div>
                     <li class="pcoded-hasmenu">
                         <a href="javascript:void(0)">
