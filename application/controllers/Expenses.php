@@ -9,6 +9,6 @@ class Expenses extends CI_Controller{
 	public function index(){
 		$data['title'] = "Add Expenses";
 		$data['breadcrumb'] = array('dashboard'=>'Dashbaord',);
-		$this->template->load('Expenses','add',$data);
+		$this->template->load('expenses','add',$data);
 	}
 }
