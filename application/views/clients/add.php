@@ -70,7 +70,7 @@
                             </div>
                             <label class="col-sm-2 col-form-label">Mobile <span class="text-danger">*</span> </label>
                             <div class="col-sm-4">
-                                <input type="text" name="company_mobile" id="company_mobile" maxlength="10" class="form-control" placeholder="Enter Mobile" required>
+                                <input type="text" name="company_mobile" id="company_mobile" maxlength="10" class="form-control" placeholder="Enter Company Mobile" required>
                             </div>
                     	</div>
                         <div class="form-group row">
@@ -95,7 +95,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-2">
-                                <input type="submit" name="addclient" value="Add Client" class="btn btn-sn bg-c-lite-green">
+                                <input type="submit" name="addclient" value="Add Client" class="btn btn-sn bg-primary">
                             </div>
                         </div>
                   	 </form>

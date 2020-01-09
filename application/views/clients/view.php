@@ -4,14 +4,14 @@
             <div class="card">
             	<div class="card-header">
                     <div class="pull-left">
-                        <a href="<?php echo base_url("clients"); ?>" class="btn btn-sm btn-primary"><i class="ti-view-list-alt"></i> Add Clients</a>
+                        <a href="<?php echo base_url("clients"); ?>" class="btn btn-sm bg-primary"><i class="ti-plus"></i> Add Clients</a>
                     </div>
                 	<div class="pull-right">
-                        <a href="<?php echo base_url('clients'); ?>" class="btn btn-sm btn-primary"><i class="ti-arrow-left"></i> BACK</a>
+                        <a href="<?php echo base_url('clients'); ?>" class="btn btn-sm bg-primary"><i class="ti-arrow-left"></i> BACK</a>
                     </div>
                 </div>
                 <div class="card-block">
-                    <table class="table data-table stripe hover nowrap table-bordered" style="width:100%">
+                    <table class="table data-table stripe hover nowrap table-bordered table-responsive" style="width:100%">
                             <thead> 
                                 <tr class="bg-success">
                                     <th class="table-plus" id="t-border">Sl. NO.</th>

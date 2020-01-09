@@ -14865,3 +14865,8 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
     padding: 6px 12px;
     cursor: pointer;
 }
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    background-color: #efefef;
+    /*color: #fff;*/
+    padding: 8px 30px 8px 20px;
+}

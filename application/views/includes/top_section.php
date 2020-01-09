@@ -30,29 +30,54 @@
 <script type="text/javascript" src="<?php echo file_url('assets/js/jquery/jquery.min.js');?>"></script>
 <script type="text/javascript" src="<?php echo file_url('assets/js/custom.js');?>"></script>
 <?php
-	if(!empty($top_script)){
-		foreach($top_script as $key=>$script){
+	if(!empty($styles)){
+		foreach($styles as $key=>$style){
 			if($key=="link"){
-				if(is_array($script)){
-					foreach($script as $single_script){
-						echo "<script src='$single_script'></script>\n\t";
+				if(is_array($style)){
+					foreach($style as $single_style){
+						echo "<link rel='stylesheet' href='$single_style'>\n\t";
 					}
 				}
 				else{
-					echo "<script src='$script'></script>\n\t";
+					echo "<link rel='stylesheet' href='$style'>\n\t";
 				}
 			}
 			elseif($key=="file"){
-				if(is_array($script)){
-					foreach($script as $single_script){
-						echo "<script src='".file_url("$single_script")."'></script>\n\t";
+				if(is_array($style)){
+					foreach($style as $single_style){
+						echo "<link rel='stylesheet' href='".file_url("$single_style")."'>\n\t";
 					}
 				}
 				else{
-					echo "<script src='".file_url("$script")."'></script>\n\t";
+					echo "<link rel='stylesheet' href='".file_url("$style")."'>\n\t";
 				}
 			}
 		}
+	}
+	
+	if(!empty($top_script)){
+	  foreach($top_script as $key=>$script){
+		  if($key=="link"){
+				if(is_array($script)){
+					foreach($script as $single_script){
+						echo "<script src='$single_script'></script>\n\t\t";
+					}
+				}
+				else{
+					echo "<script src='$script'></script>\n\t\t";
+				}
+		  }
+		  elseif($key=="file"){
+			if(is_array($script)){
+				foreach($script as $single_script){
+					echo "<script src='".file_url("$single_script")."'></script>\n\t\t";
+				}
+			}
+			else{
+				echo "<script src='".file_url("$script")."'></script>\n\t\t";
+			}
+		  }
+	  }
 	}
 ?>
 </head>

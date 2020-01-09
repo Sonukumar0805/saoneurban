@@ -58,19 +58,36 @@
                         </a>
                     </li>
                 </ul>
+                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms"><!--Forms &amp; Tables--></div>
+                <ul class="pcoded-item pcoded-left-item">
+                    <li>
+                        <a href="<?php echo base_url('staff');?>">
+                            <span class="pcoded-micon"><i class="ti-user"></i><b>S</b></span>
+                            <span class="pcoded-mtext" data-i18n="nav.form-components.main"> Staff </span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
+                    </li>
+                </ul>
                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation"></div>
                 <ul class="pcoded-item pcoded-left-item">
                     <li class="pcoded-hasmenu">
                         <a href="javascript:void(0)">
-                            <span class="pcoded-micon"><i class="ti-user"></i></span>
-                            <span class="pcoded-mtext"  data-i18n="nav.basic-components.main"> Staffs </span>
+                            <span class="pcoded-micon"><i class="ti-wallet"></i></span>
+                            <span class="pcoded-mtext"  data-i18n="nav.basic-components.main"> Staffs Salary</span>
                             <span class="pcoded-mcaret"></span>
                         </a>
                         <ul class="pcoded-submenu">
                             <li class=" ">
-                                <a href="<?php echo base_url('staff');?>">
+                                <a href="<?php echo base_url('staffsalary/advancesalary');?>">
                                     <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Staff</span>
+                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Advance Salary </span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
+                            <li class=" ">
+                                <a href="<?php echo base_url('staffsalary');?>">
+                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Monthly Salary </span>
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
@@ -123,7 +140,6 @@
                             </li>
                         </ul>
                     </li>
-
                 </ul>
 
                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.other">Other</div>

@@ -9,13 +9,10 @@
                 </div>
                 <div class="card-block">
                     <form action="<?php //echo base_url('clients/addclient');?>" method="POST">
-                    	<div class="form-group row"> 
-                        	<label class="col-sm-4 text-danger">Client Details</label>
-                        </div> 
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label"> Clients <span class="text-danger">*</span> </label>
                             <div class="col-sm-4">
-                                <select name="client_id" id="client_id" class="form-control select2">
+                                <select name="client_id" id="client_id" class="select2 form-control ">
                                 	<option value="">Select Clients</option>
                                 	<?php
 										if(is_array($clients)){ 
@@ -25,49 +22,59 @@
                                     <?php }}?>
                                 </select>
                             </div>
-                            <label class="col-sm-2 col-form-label"> Mobile <span class="text-danger">*</span> </label>
+                            <label class="col-sm-2 col-form-label"> Mobile </label>
                             <div class="col-sm-4">
-                                <input type="text" name="mobile" id="mobile" maxlength="10" class="form-control" placeholder="Enter Mobile" required>
+                                <input type="text" id="mobile" maxlength="10" class="form-control" placeholder="Enter Mobile" readonly style="cursor:not-allowed;">
                             </div>
                     	</div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Aadhar</label>
+                            <label class="col-sm-2 col-form-label">email</label>
                             <div class="col-sm-4">
-                                <input type="text" name="aadhar" id="aadhar" class="form-control" placeholder="Enter Aadhar">
+                                <input type="text" id="email" class="form-control" placeholder="Email" readonly style="cursor:not-allowed;">
                             </div>
-                            <label class="col-sm-2 col-form-label">Gender</label>
+                            <label class="col-sm-2 col-form-label">Registration No.</label>
                             <div class="col-sm-4">
-                                <select name="gender" id="gender" class="form-control">
-                                	<option value="">Select Gender</option>
-                                	<option value="Male">Male</option>
-                                	<option value="Female">Female</option>
-                                	<option value="Others">Others</option>
-                                </select>
+                                <input type="text" id="registration" class="form-control" placeholder="Registration No." readonly style="cursor:not-allowed;">                            	
                             </div>
                     	</div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">District</label>
+                            <label class="col-sm-2 col-form-label">Website</label>
                             <div class="col-sm-4">
-                                <input type="text" name="district" id="district" class="form-control" placeholder="Enter District">
+                                <input type="text" id="c_website" class="form-control" placeholder="Website" readonly style="cursor:not-allowed;">
                             </div>
                             <label class="col-sm-2 col-form-label">State</label>
                             <div class="col-sm-4">
-                                <input type="text" name="state" id="state" class="form-control" placeholder="Enter State">
+                                <input type="text" id="state" class="form-control" placeholder="State" readonly style="cursor:not-allowed;">
                             </div>
                     	</div>
                         <div class="form-group row">
                             <label class="col-sm-2 col-form-label">Address</label>
                             <div class="col-sm-4">
-                                <textarea rows="3" cols="5" name="address" id="address" class="form-control" placeholder="Address"></textarea>
+                                <textarea rows="3" cols="5" id="address" class="form-control" placeholder="Address" readonly style="cursor:not-allowed;"></textarea>
                             </div>
-                            <label class="col-sm-2 col-form-label">Pincode</label>
+                            <label class="col-sm-2 col-form-label">Dues</label>
                             <div class="col-sm-4">
-                                <input type="text" name="pincode" id="pincode" class="form-control" placeholder="Enter Pincode">
+                                <input type="text" id="dues" class="form-control" placeholder="Dues" readonly style="cursor:not-allowed;">
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label class="col-sm-2 col-form-label"> Payment Mode <span class="text-danger">*</span> </label>
+                            <div class="col-sm-4">
+                                <select name="payment_mode" id="payment_mode" class="form-control ">
+                                	<option value="">Select Clients</option>
+                                	<option value="Cash">Cash</option>
+                                    <option value="NIFT">NIFT</option>
+                                    <option value="RTGS">RTGS</option>
+                                </select>
+                            </div>
+                            <label class="col-sm-2 col-form-label">Pay Amount</label>
+                            <div class="col-sm-4">
+                                <input type="text" name="" id="amount" class="form-control" placeholder="Pay Amount">
+                            </div>
+                    	</div>
+                        <div class="form-group row">
                             <div class="col-sm-2">
-                                <input type="submit" name="addclient" value="Add Client" class="btn btn-sn bg-c-lite-green">
+                                <input type="submit" name="addpayment" value="Add Payment" class="btn btn-sn bg-primary">
                             </div>
                         </div>
                   	 </form>
