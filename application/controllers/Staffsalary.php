@@ -9,7 +9,7 @@ class Staffsalary extends CI_Controller{
 	public function index(){
 		$data['title'] = "Monthly Salary";
 		$data['breadcrumb'] = array('dashboard'=>'Dashboard');
-		$this->template->load('staff','monthlysalry',$data);
+		$this->template->load('staff','monthlysalary',$data);
 	}
 	
 	public function advancesalary(){
