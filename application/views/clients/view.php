@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="card-block">
-                    <table class="table data-table stripe hover nowrap table-bordered table-responsive" style="width:100%">
+                    <table class="table data-table stripe table-bordered table-responsive" width="100%">
                             <thead> 
                                 <tr class="bg-success">
                                     <th class="table-plus" id="t-border">Sl. NO.</th>
@@ -72,6 +72,6 @@
 				searchPlaceholder: "Search"
 			},
 		});
-		new $.fn.dataTable.FixedHeader( table );
+		//$.fn.dataTable.FixedHeader('.data-table');
 	});
 </script>

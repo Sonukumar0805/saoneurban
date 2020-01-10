@@ -14853,17 +14853,17 @@ table.footable-paging-center > tfoot > tr.footable-paging > td {
 
 /*# sourceMappingURL=style.css.map */
  .hidden{
-		display:none;
+		display:none !important;
 	}
 .breadcrumb-item.active {
     color: #065661 !important;
 }
 .btn {
-    border-radius: 2px;
-    text-transform: capitalize;
-    font-size: 12px;
-    padding: 6px 12px;
-    cursor: pointer;
+    border-radius: 2px !important;
+    text-transform: capitalize !important;
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+    cursor: pointer !important;
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered {
     background-color: #efefef;

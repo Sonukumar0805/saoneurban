@@ -1,7 +1,10 @@
 <?php 
 
 class Client_model extends CI_Model{
-	
+	function __construct(){
+		parent::__construct(); 
+		$this->db->db_debug = false;
+	}
 	public function addclient($data){
 		$this->db->select_max('id');
 		/*$query = $this->db->get('su_clients');

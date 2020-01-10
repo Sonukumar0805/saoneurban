@@ -30,7 +30,7 @@
                             </a>
                             <ul class="pcoded-submenu">
                                 <li class=" ">
-                                    <a href="<?php //echo base_url('staffsalary/advancesalary');?>">
+                                    <a href="<?php echo base_url('master/expensehead');?>">
                                         <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                         <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Add Expense Head </span>
                                         <span class="pcoded-mcaret"></span>

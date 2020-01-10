@@ -74,19 +74,19 @@
                             </div>
                     	</div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Email</label>
+                            <label class="col-sm-2 col-form-label">Email <span class="text-danger">*</span></label>
                             <div class="col-sm-4">
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email">
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" required>
                             </div>
-                            <label class="col-sm-2 col-form-label">Website</label>
+                            <label class="col-sm-2 col-form-label">Website <span class="text-danger">*</span> </label>
                             <div class="col-sm-4">
-                                <input type="text" name="c_website" id="c_website" class="form-control" placeholder="Enter Company Website">
+                                <input type="text" name="c_website" id="c_website" class="form-control" placeholder="Enter Company Website" required>
                             </div>
                     	</div>
                         <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Address</label>
+                            <label class="col-sm-2 col-form-label">Address <span class="text-danger">*</span></label>
                             <div class="col-sm-4">
-                                <textarea rows="3" cols="5" name="company_address" id="company_address" class="form-control" placeholder="Company Address"></textarea>
+                                <textarea rows="3" cols="5" name="company_address" id="company_address" class="form-control" placeholder="Company Address" required></textarea>
                             </div>
                             <label class="col-sm-2 col-form-label">Registration No.</label>
                             <div class="col-sm-4">
@@ -98,9 +98,9 @@
                                 <input type="submit" name="addclient" value="Add Client" class="btn btn-sn bg-primary">
                             </div>
                         </div>
-                  	 </form>
-                   </div>
-                </div>
+                    </form>
+               </div>
             </div>
         </div>
-      </div>
+    </div>
+  </div>
