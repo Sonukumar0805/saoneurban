@@ -180,7 +180,7 @@
 	
 	function loaddatatable(){
 		//new
-		$this->styles['link'][]="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css";
+		//$this->styles['link'][]="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css";
 		////
 		$this->styles['link'][]="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css";
 		//$this->styles['link'][]="https://cdn.datatables.net/fixedheader/3.1.5/css/fixedHeader.bootstrap.min.css";
