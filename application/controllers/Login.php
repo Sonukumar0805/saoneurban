@@ -73,7 +73,6 @@ class Login extends CI_Controller{
 		redirect('/');
 	}
 	
-	
 	public function validateUser(){
 		if($this->input->post('forgotpassword')!==NULL){
 			$username=$this->input->post('username');

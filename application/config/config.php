@@ -28,7 +28,7 @@ if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST']== 'localhost'){
 	$config['base_url'] = "http://$_SERVER[HTTP_HOST]/saoneurban/";
 }
 elseif(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST']=='softwarenew.in'){
-	$config['base_url'] = "http://$_SERVER[HTTP_HOST]/saoneurban/index.php";
+	$config['base_url'] = "http://$_SERVER[HTTP_HOST]/saoneurban/";
 }
 else{
 	$config['base_url'] = "http://$_SERVER[HTTP_HOST]";
