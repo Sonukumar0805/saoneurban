@@ -28,6 +28,31 @@ class Client_model extends CI_Model{
 		return $array;
 	}
 	
+	public function updateclient($data){
+		$id = $data['id'];
+		unset($data['id']);
+		$this->db->where(array('id'=>$id));
+		$query = $this->db->update('su_clients',$data);
+		if($query){
+			return true;
+		}
+		else{
+			return $this->db->error();
+		}
+	}
+	
+	public function deleteclient($id){
+		$where = array('id'=>$id);
+		$data['status'] = '0';
+		$this->db->where($where);
+		$delete = $this->db->update('su_clients',$data);
+		if($delete){
+			return true;
+		}
+		else{
+			return $this->db->error();
+		}
+	}
 	
 	public function addagreement($data){
 		$query = $this->db->insert('su_agreements',$data);

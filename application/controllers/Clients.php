@@ -43,6 +43,30 @@ class Clients extends CI_Controller{
 		$this->template->load('clients','edit',$data);
 	}
 	
+	public function updateclient(){
+		$data = $this->input->post();
+		unset($data['updateclient']);
+		$result=$this->Client_model->updateclient($data);
+		if($result === true){
+			$this->session->set_flashdata('msg',"Client Updqated Successfully!");
+		}
+		else{
+			$this->session->set_flashdata('err_msg',$result);
+		}
+		redirect('clients/clientlist');
+	}
+	
+	public function deleteclient(){
+		$id = $this->input->post('id');
+		$result = $this->Client_model->deleteclient($id);
+		if($result === true){
+			$this->session->set_flashdata('msg',"Client Deleted Successfully.");
+		}
+		else{
+			$this->session->set_flashdata('err_msg',$result['message']);
+		}
+	}
+	
 	public function agreements(){
 		$data['title'] = "Client Agreements";
 		$data['breadcrumb'] = array('dashboard'=>'Dashboard');

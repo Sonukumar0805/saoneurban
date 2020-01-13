@@ -55,7 +55,7 @@
                             </div>
                             <label class="col-sm-2 col-form-label">Monthly Rate <span class="text-danger">*</span></label>
                             <div class="col-sm-4">
-                                <input name="monthly_Rate" id="monthly_Rate" value="<?php echo intval($agreement['monthly_Rate']);?>" class="form-control" placeholder="Enter Monthly Rate" required>
+                                <input name="monthly_rate" id="monthly_rate" value="<?php echo intval($agreement['monthly_rate']);?>" class="form-control" placeholder="Enter Monthly Rate" required>
                             </div>
                     	</div>
                         <!--<div class="form-group row">

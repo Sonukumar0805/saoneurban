@@ -59,6 +59,25 @@
   </div>
   <script>
 	$(document).ready(function(e) {
+		
+		$('body').on('click','.delete',function(){
+			var dlt = $(this).attr('value');
+			var prompt = confirm("Are you sure you want to delete? Your imporatant data may be loss.");
+			if(prompt){
+				$.ajax({
+					url:"<?php echo base_url('clients/deleteclient')?>",
+					method:"POST",
+					data:{id:dlt},
+					success:function(data){
+						location.reload();
+					}
+				});
+			}
+			else{
+				return false;
+			}
+		});
+		
 		var table=$('.data-table').DataTable({
 			scrollCollapse: true,
 			autoWidth: false,
@@ -75,22 +94,6 @@
 		});
 		$.fn.dataTable.FixedHeader('.data-table');
 		
-		$('body').on('click','.delete',function(){
-			var dlt = $(this).attr('value');
-			var prompt = confirm("Are you sure you want to delete? Your imporatant data may be loss.");
-			if(prompt){
-				$.ajax({
-					url:"<?php echo base_url('clients/deleteagreements')?>",
-					method:"POST",
-					data:{id:dlt},
-					success:function(data){
-						location.reload();
-					}
-				});
-			}
-			else{
-				return false;
-			}
-		});
+		
 	});
 </script>

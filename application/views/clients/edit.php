@@ -34,9 +34,9 @@
                             <div class="col-sm-4">
                                 <select name="gender" id="gender" class="form-control">
                                 	<option value="">Select Gender</option>
-                                	<option value="Male">Male</option>
-                                	<option value="Female">Female</option>
-                                	<option value="Others">Others</option>
+                                	<option value="Male"<?php if($client['gender']== "Male"){echo "selected";}?>>Male</option>
+                                	<option value="Female"<?php if($client['gender']== "Female"){echo "selected";}?>>Female</option>
+                                	<option value="Others"<?php if($client['gender']== "Others"){echo "selected";}?>>Others</option>
                                 </select>
                             </div>
                     	</div>
@@ -95,6 +95,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-2">
+                            	<input type="hidden" name="id" id="id" value="<?php echo $client['id'];?>">
                                 <input type="submit" name="updateclient" value="Update Client" class="btn btn-sn bg-primary">
                             </div>
                             <div class="col-sm-3">
