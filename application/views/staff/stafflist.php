@@ -39,12 +39,12 @@
                                 <td><?php echo $list['name']; ?></td>
                                 <td><?php echo $list['mobile']; ?></td>
                                 <td><?php echo $list['dob']; ?></td>
-                                <td><?php echo $list['email']; ?></td>
                                 <td><?php echo $list['emp_id']; ?></td>
                                 <td><?php echo $list['gender']; ?></td>
                                 <td><?php echo $list['doj'];?> </td> 
                                 <td><?php echo $list['aadhar']; ?></td>
                                 <td><?php echo $list['basic_salary']; ?></td>
+                                <td><?php echo $list['designation']; ?></td>
                                 <td><?php echo $list['address']; ?></td>
                                 <td><img src="<?php echo base_url('/').$list['photo']?>" alt="Staff Image" id="target" height="120" width="100"></td>
                                 <td>
