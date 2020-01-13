@@ -41,8 +41,9 @@
                                     <td id="t-border"><?php echo $client['c_website']; ?></td>
                                     <td id="t-border"><?php echo $client['registration_no']; ?></td>
                                     <td id="t-border"><?php echo $client['address'].' '.$client['district'].' '.$client['state']; ?></td>
-                                    <td id="t-border">
-                                        <a href="<?php //echo base_url('master/customers/editcustomer/'.$customer['id']); ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
+                                   <td id="t-border">
+                                        <a href="<?php echo base_url('clients/editclient/'.md5($client['id']));?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
+                                        <button type="button" class="btn btn-sm bg-danger delete" value="<?php echo $client['id']?>"><i class="ti-trash"></i> Delete</button>
                                     </td>
                                 </tr>
 								<?php
@@ -72,6 +73,24 @@
 				searchPlaceholder: "Search"
 			},
 		});
-		//$.fn.dataTable.FixedHeader('.data-table');
+		$.fn.dataTable.FixedHeader('.data-table');
+		
+		$('body').on('click','.delete',function(){
+			var dlt = $(this).attr('value');
+			var prompt = confirm("Are you sure you want to delete? Your imporatant data may be loss.");
+			if(prompt){
+				$.ajax({
+					url:"<?php echo base_url('clients/deleteagreements')?>",
+					method:"POST",
+					data:{id:dlt},
+					success:function(data){
+						location.reload();
+					}
+				});
+			}
+			else{
+				return false;
+			}
+		});
 	});
 </script>

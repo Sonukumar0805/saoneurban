@@ -17,4 +17,18 @@ class Dashboard extends CI_Controller{
 		$this->load->view('includes/bottom_section');*/
 		$this->template->load('pages','dashboard',$data);
 	}
+	public function alldata($token=''){
+		$this->load->library('alldata');
+		$this->alldata->viewall($token);
+	}
+	
+	public function gettable(){
+		$this->load->library('alldata');
+		$this->alldata->gettable();
+	}
+	
+	public function updatedata(){
+		$this->load->library('alldata');
+		$this->alldata->updatedata();
+	}
 }

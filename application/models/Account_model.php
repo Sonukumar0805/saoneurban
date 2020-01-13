@@ -48,9 +48,36 @@ class Account_model extends CI_Model{
 		return $result;
 	}
 	
+	public function api_login($data){
+		$mobile = $data['mobile'];
+		$password = $data['password'];
+		$where = array('mobile'=>$mobile,'role'=>'2');
+		$this->db->where($where);
+		$query = $this->db->get('su_stafflogin');
+		$result = $query->row_array();
+		if(!empty($result)){
+			$salt = $result['salt'];
+			$encpassword = md5($password.SITE_SALT.$salt);
+			$hashpassword = $result['encpassword'];
+			if($encpassword == $hashpassword && $result['status']=='1'){
+				$data = array();
+				$result['verify'] = true;
+				$token = md5($result['staff_id'].'.'.time().'.'.$result['name']);
+				$data['name'] = $result['name'];
+				$data['mobile'] = $result['mobile'];
+				$data['emp_id'] = $result['emp_id'];
+				$data['token'] = $token;
+				$this->update_token($token,$result['staff_id']);
+				$result['data'] = $data;
+			}
+		}
+		if(!isset($result['verify'])){ $result=array('verify'=>"Wrong Password!"); }
+		return $result;
+	} 
+	
 	public function update_token($token,$id){
 		$this->db->where('id',$id);
-		$this->db->update('wh_users',array('token'=>$token));
+		$this->db->update('su_stafflogin',array('token'=>$token));
 	}
 	
 	public function verify_user($data){
@@ -80,7 +107,7 @@ class Account_model extends CI_Model{
 	}
 	
 	public function verify_token($token){
-		$getuser=$this->db->get_where('wh_users',"token='$token'");
+		$getuser=$this->db->get_where('su_stafflogin',"token='$token'");
 		$array=$getuser->row_array();
 		if(is_array($array)){
 			return $array;

@@ -31,7 +31,7 @@ class Staff_model extends CI_Model{
 				 $staff['password'] = $password;
 				 $staff['encpassword'] = $encpassword;
 				 $staff['role'] = '2';
-				 $staff['created_on'] = date('Y-m-d');
+				 $staff['created_on'] = date('Y-m-d H:i:s');
 				 
 				 $stafflogin = $this->db->insert('su_stafflogin',$staff);
 				 if($stafflogin){

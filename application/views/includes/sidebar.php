@@ -54,6 +54,13 @@
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
+                            <li class=" ">
+                                <a href="<?php echo base_url('clients/agreements');?>">
+                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Client Agreements</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
