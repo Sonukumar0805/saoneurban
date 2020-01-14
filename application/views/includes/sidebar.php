@@ -67,7 +67,7 @@
                 <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms"><!--Forms &amp; Tables--></div>
                 <ul class="pcoded-item pcoded-left-item">
                     <li>
-                        <a href="<?php echo base_url('Payment');?>">
+                        <a href="<?php echo base_url('payment');?>">
                             <span class="pcoded-micon"><i class="ti-credit-card"></i><b>P</b></span>
                             <span class="pcoded-mtext" data-i18n="nav.form-components.main"> Payment </span>
                             <span class="pcoded-mcaret"></span>
