@@ -19,8 +19,8 @@
                                 <label class="col-sm-12 col-md-2 col-form-label">Staff ID <span class="text-danger">*</span></label>
                                 <div class="col-sm-12 col-md-8">
                                     <?php 
-                                        $data = array('name' => 'emp_id','id'=> 'emp_id', 'placeholder'=>'Staff Id', 'class'=>'form-control', 'required'=>'true');
-                                        echo form_input($data); 
+                                        echo form_dropdown('staff_id',$staff,'',array('id'=>'staff_id','class'=>'form-control select2','required'=>'true')); 
+                                    ?>
                                     ?>
                                 </div>
                             </div>
@@ -228,6 +228,7 @@
   </div>
 <script>
 $(document).ready(function(e){
+	$('#staff_id').select2();
     $('#emp_id').keyup(function(e){
         var emp_id = $('#emp_id').val();
 		//alert(emp_id);

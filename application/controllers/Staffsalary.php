@@ -14,9 +14,11 @@ class Staffsalary extends CI_Controller{
 		$options = array(''=>'Select Staff');
 		if(is_array($staffs)){
 			foreach($staffs as $staff){
-				
+				$options[$staff['id']] = $staff['name'];
 			}
 		}
+		
+		$data['staff'] = $options;
 		$this->template->load('staff','monthlysalary',$data);
 	}
 	
@@ -24,6 +26,14 @@ class Staffsalary extends CI_Controller{
 		$data['title'] = "Advance Salary";
 		$data['breadcrumb'] = array('dashboard'=>'Dashboard');
 		$data['select2'] = true;
+		$staffs = $this->Staff_model->get_stafflist(array('status'=>'1'),'all');
+		$options = array(''=>'Select Staff');
+		if(is_array($staffs)){
+			foreach($staffs as $staff){
+				$options[$staff['id']] = $staff['name'];
+			}
+		}
+		$data['staff'] = $options;
 		$this->template->load('staff','advancesalary',$data);		
 	}
 }

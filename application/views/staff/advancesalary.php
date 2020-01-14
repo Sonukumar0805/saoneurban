@@ -19,18 +19,13 @@
                                 <label class="col-sm-12 col-md-2 col-form-label">Staff ID <span class="text-danger">*</span></label>
                                 <div class="col-sm-12 col-md-8">
                                     <?php 
-                                        $data = array('name' => 'staff_id','id'=> 'staff_id', 'placeholder'=>'Staff Id', 'class'=>'form-control select2', 'required'=>'true');
-                                        echo form_input($data); 
-										
-                                        $gender=array(""=>"Select Gender","Male"=>"Male","Female"=>"Female");
-                                        echo form_dropdown('gender',$gender,'',array("class"=>"form-control","required"=>"true",'readonly' => 'true','id'=>'gender'));
+                                        echo form_dropdown('staff_id',$staff,'',array('id'=>'staff_id','class'=>'form-control select2','required'=>'true')); 
                                     ?>
                                 </div>
                             </div>
                             <div class="row form-group">
                                 <label class="col-sm-12 col-md-2 col-form-label">Name <span class="text-danger">*</span></label>
                                 <div class="col-sm-12 col-md-8">
-                                    <input type="hidden" id="id" name="staff_id">
                                     <?php 
                                         $data = array('id'=> 'name','placeholder'=>'Name', 'class'=>'form-control', 'required'=>'true','readonly' => 'true');
                                         echo form_input($data); 
@@ -141,8 +136,8 @@
     </div>
   </div>
 <script>
-<script>
 $(document).ready(function(e){
+	$('#staff_id').select2();
     $('#emp_id').keyup(function(e){
         var emp_id = $('#emp_id').val();
 		//alert(emp_id);
