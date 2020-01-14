@@ -11,45 +11,49 @@
                     </div>
                 </div> 
                 <div class="card-block">
-                    <table class="table data-table stripe hover nowrap table-bordered" style="width:100%">
-                            <thead> 
-                                <tr class="bg-success">
-                                    <th class="table-plus" id="t-border">Sl. NO.</th>
-                                    <th id="t-border">Date</th>
-                                    <th id="t-border">Name</th>
-                                    <th id="t-border">Bill No.</th>
-                                    <th id="t-border">Expense Head</th>
-                                    <th id="t-border">Particulars</th>
-                                    <th id="t-border">Description</th>
-                                    <th id="t-border">Amount</th>
-                                    <th id="t-border" class="datatable-nosort">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-								<?php
-                                   if(is_array($expenses)){$i = 0;
-                                        foreach($expenses as $list){
-                                ?>
-                                <tr>
-                                    <td id="t-border"><?php echo ++$i; ?></td>
-                                    <td class="table-plus" id="t-border"><?php echo $list['name']; ?></td>
-                                    <td id="t-border"><?php echo $list['date']; ?></td>
-                                    <td id="t-border"><?php echo $list['bill_no']; ?></td>
-                                    <td id="t-border"><?php echo $list['expensehead']; ?></td>
-                                    <td id="t-border"><?php echo $list['particular']; ?></td>
-                                    <td id="t-border"><?php echo $list['description']; ?></td>
-                                    <td id="t-border"><?php echo $list['amount']; ?></td>
-                                    <td id="t-border">
-                                        <a href="<?php echo base_url('expenses/editexpenses/'.$list['id']); ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
-                                        <button type="button" class="btn btn-sm bg-danger delete" value="<?php echo $list['id']?>"><i class="ti-trash"></i> Delete</button>
-                                    </td>
-                                </tr>
-								<?php
+                	<div class="row">
+                    	<div class="col-md-12 table-responsive">
+                    		<table class="table data-table stripe hover nowrap table-bordered" style="width:100%">
+                                <thead> 
+                                    <tr class="bg-success">
+                                        <th class="table-plus" id="t-border">Sl. NO.</th>
+                                        <th id="t-border">Date</th>
+                                        <th id="t-border">Name</th>
+                                        <th id="t-border">Bill No.</th>
+                                        <th id="t-border">Expense Head</th>
+                                        <th id="t-border">Particulars</th>
+                                        <th id="t-border">Description</th>
+                                        <th id="t-border">Amount</th>
+                                        <th id="t-border" class="datatable-nosort">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                       if(is_array($expenses)){$i = 0;
+                                            foreach($expenses as $list){
+                                    ?>
+                                    <tr>
+                                        <td id="t-border"><?php echo ++$i; ?></td>
+                                        <td class="table-plus" id="t-border"><?php echo $list['name']; ?></td>
+                                        <td id="t-border"><?php echo $list['date']; ?></td>
+                                        <td id="t-border"><?php echo $list['bill_no']; ?></td>
+                                        <td id="t-border"><?php echo $list['expensehead']; ?></td>
+                                        <td id="t-border"><?php echo $list['particular']; ?></td>
+                                        <td id="t-border"><?php echo $list['description']; ?></td>
+                                        <td id="t-border"><?php echo $list['amount']; ?></td>
+                                        <td id="t-border">
+                                            <a href="<?php echo base_url('expenses/editexpenses/'.$list['id']); ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
+                                            <button type="button" class="btn btn-sm bg-danger delete" value="<?php echo $list['id']?>"><i class="ti-trash"></i> Delete</button>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                            }
                                         }
-                                    }
-                                ?>
-                        </tbody>
-                    </table>
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                </div>
             </div>
         </div>

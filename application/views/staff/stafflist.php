@@ -11,53 +11,57 @@
                     </div>
                 </div>
                 <div class="card-block">
-                	<table class="table data-table stripe hover nowrap table-responsive">
-                        <thead>
-                            <tr class="bg-danger">
-                                <th class="table-plus" id="t-border">Sl No.</th>
-                                <th id="t-border">Name</th>
-                                <th id="t-border">Mobile</th>
-                                <th id="t-border">DOb</th>
-                                <th id="t-border">Employee ID</th>
-                                <th id="t-border">Gender</th>
-                                <th id="t-border">DOJ</th>
-                                <th id="t-border">Aadhar</th>
-                                <th id="t-border">Basic Salary</th>
-                                <th id="t-border">Designation</th>
-                                <th id="t-border">Address</th>
-                                <th id="t-border">Photo</th>
-                                <th id="t-border" class="datatable-nosort">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            if(is_array($stafflist)){$i=0;
-                                foreach($stafflist as $list){$i++;
-                            ?>
-                            <tr>
-                                <td><?php echo $i; ?></td>
-                                <td><?php echo $list['name']; ?></td>
-                                <td><?php echo $list['mobile']; ?></td>
-                                <td><?php echo $list['dob']; ?></td>
-                                <td><?php echo $list['emp_id']; ?></td>
-                                <td><?php echo $list['gender']; ?></td>
-                                <td><?php echo $list['doj'];?> </td> 
-                                <td><?php echo $list['aadhar']; ?></td>
-                                <td><?php echo $list['basic_salary']; ?></td>
-                                <td><?php echo $list['designation']; ?></td>
-                                <td><?php echo $list['address']; ?></td>
-                                <td><img src="<?php echo base_url('/').$list['photo']?>" alt="Staff Image" id="target" height="120" width="100"></td>
-                                <td>
-                                    <a href="<?php echo base_url('staff/editstaff/'.md5($list['id'])); ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
-                                    <button type="button" class="btn btn-sm bg-danger delete" value="<?php echo $list['id']?>"><i class="ti-trash"></i> Delete</button>
-                                </td>
-                            </tr>
-                            <?php
-                               }
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                	<div class="row">
+                    	<div class="col-md-12 table-responsive">
+                    		<table class="table data-table stripe hover nowrap">
+                                <thead>
+                                    <tr class="bg-danger">
+                                        <th class="table-plus" id="t-border">Sl No.</th>
+                                        <th id="t-border">Name</th>
+                                        <th id="t-border">Mobile</th>
+                                        <th id="t-border">DOb</th>
+                                        <th id="t-border">Employee ID</th>
+                                        <th id="t-border">Gender</th>
+                                        <th id="t-border">DOJ</th>
+                                        <th id="t-border">Aadhar</th>
+                                        <th id="t-border">Basic Salary</th>
+                                        <th id="t-border">Designation</th>
+                                        <th id="t-border">Address</th>
+                                        <th id="t-border">Photo</th>
+                                        <th id="t-border" class="datatable-nosort">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if(is_array($stafflist)){$i=0;
+                                        foreach($stafflist as $list){$i++;
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $i; ?></td>
+                                        <td><?php echo $list['name']; ?></td>
+                                        <td><?php echo $list['mobile']; ?></td>
+                                        <td><?php echo $list['dob']; ?></td>
+                                        <td><?php echo $list['emp_id']; ?></td>
+                                        <td><?php echo $list['gender']; ?></td>
+                                        <td><?php echo $list['doj'];?> </td> 
+                                        <td><?php echo $list['aadhar']; ?></td>
+                                        <td><?php echo $list['basic_salary']; ?></td>
+                                        <td><?php echo $list['designation']; ?></td>
+                                        <td><?php echo $list['address']; ?></td>
+                                        <td><img src="<?php echo base_url('/').$list['photo']?>" alt="Staff Image" id="target" height="120" width="100"></td>
+                                        <td>
+                                            <a href="<?php echo base_url('staff/editstaff/'.md5($list['id'])); ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
+                                            <button type="button" class="btn btn-sm bg-danger delete" value="<?php echo $list['id']?>"><i class="ti-trash"></i> Delete</button>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                       }
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

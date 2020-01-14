@@ -3,44 +3,42 @@
         <div class="col-sm-12">
             <div class="card">
             	<div class="card-header">
-                    <div class="pull-left">
-                        <a href="<?php echo base_url("clients/agreements"); ?>" class="btn btn-sm bg-primary"><i class="ti-plus"></i> Add Agreements</a>
+                	<div class="pull-left">
+                        <a href="<?php echo base_url("payment"); ?>" class="btn btn-sm bg-primary"><i class="ti-plus"></i> Add Payment </a>
                     </div>
                 	<div class="pull-right">
-                        <a href="<?php echo base_url('clients/agreements'); ?>" class="btn btn-sm bg-primary"><i class="ti-arrow-left"></i> BACK</a>
+                        <a href="<?php echo base_url('payment'); ?>" class="btn btn-sm bg-primary"><i class="ti-arrow-left"></i> BACK</a>
                     </div>
-                </div>
+                </div> 
                 <div class="card-block">
                 	<div class="row">
                     	<div class="col-md-12 table-responsive">
-                    		<table class="table data-table stripe table-bordered" width="100%">
+                    		<table class="table data-table stripe hover nowrap table-bordered" style="width:100%">
                                 <thead> 
                                     <tr class="bg-success">
                                         <th class="table-plus" id="t-border">Sl. NO.</th>
                                         <th id="t-border">Date</th>
-                                        <th id="t-border">Client name</th>
-                                        <th id="t-border">Man Power</th>
-                                        <th id="t-border">No. of Person</th>
-                                        <th id="t-border">Perday Rate</th>
-                                        <th id="t-border">Monthly Rate</th>
+                                        <th id="t-border">Name</th>
+                                        <th id="t-border">Email</th>
+                                        <th id="t-border">Payment Mode</th>
+                                        <th id="t-border">Amount</th>
                                         <th id="t-border" class="datatable-nosort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                        if(is_array($agreements)){$i = 0;
-                                            foreach($agreements as $list){
+                                       if(is_array($paymentlist)){$i = 0;
+                                            foreach($paymentlist as $list){
                                     ?>
                                     <tr>
                                         <td id="t-border"><?php echo ++$i; ?></td>
                                         <td class="table-plus" id="t-border"><?php echo $list['date']; ?></td>
-                                        <td id="t-border"><?php echo $list['name']; ?></td>
-                                        <td id="t-border"><?php echo $list['man_power']; ?></td>
-                                        <td id="t-border"><?php echo $list['person_no']; ?></td>
-                                        <td id="t-border"><?php echo $list['perday_rate']; ?></td>
-                                        <td id="t-border"><?php echo $list['monthly_rate']; ?></td>
+                                        <td id="t-border"><?php echo $list['name']; ?><span class="hidden"><?php echo $list['client_id']?></span></td>
+                                        <td id="t-border"><?php echo $list['email']; ?></td>
+                                        <td id="t-border"><?php echo $list['payment_mode']; ?></td>
+                                        <td id="t-border"><?php echo $list['amount']; ?></td>
                                         <td id="t-border">
-                                            <a href="<?php echo base_url('clients/editagreements/'.md5($list['id']));?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
+                                            <a href="<?php echo base_url('payment/editpayment/'.md5($list['id'])); ?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
                                             <button type="button" class="btn btn-sm bg-danger delete" value="<?php echo $list['id']?>"><i class="ti-trash"></i> Delete</button>
                                         </td>
                                     </tr>
@@ -80,7 +78,7 @@
 			var prompt = confirm("Are you sure you want to delete? Your imporatant data may be loss.");
 			if(prompt){
 				$.ajax({
-					url:"<?php echo base_url('clients/deleteagreements')?>",
+					url:"<?php echo base_url('payment/deletepayment')?>",
 					method:"POST",
 					data:{id:dlt},
 					success:function(data){
@@ -92,6 +90,5 @@
 				return false;
 			}
 		});
-		
 	});
 </script>

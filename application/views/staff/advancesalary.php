@@ -19,8 +19,11 @@
                                 <label class="col-sm-12 col-md-2 col-form-label">Staff ID <span class="text-danger">*</span></label>
                                 <div class="col-sm-12 col-md-8">
                                     <?php 
-                                        $data = array('name' => 'emp_id','id'=> 'emp_id', 'placeholder'=>'Staff Id', 'class'=>'form-control', 'required'=>'true');
+                                        $data = array('name' => 'staff_id','id'=> 'staff_id', 'placeholder'=>'Staff Id', 'class'=>'form-control select2', 'required'=>'true');
                                         echo form_input($data); 
+										
+                                        $gender=array(""=>"Select Gender","Male"=>"Male","Female"=>"Female");
+                                        echo form_dropdown('gender',$gender,'',array("class"=>"form-control","required"=>"true",'readonly' => 'true','id'=>'gender'));
                                     ?>
                                 </div>
                             </div>

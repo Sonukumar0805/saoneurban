@@ -29,8 +29,8 @@
                                 </div>
                             </form>
                         </div>
-                       <div class="col-sm-6">
-                            <table class="table data-table stripe hover nowrap table-bordered table-responsive">
+                       <div class="col-sm-6 table-responsive">
+                            <table class="table data-table stripe hover nowrap table-bordered">
                                 <thead> 
                                     <tr class="bg-success">
                                         <th >Sl. NO.</th>

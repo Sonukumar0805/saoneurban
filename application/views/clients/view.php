@@ -11,47 +11,51 @@
                     </div>
                 </div>
                 <div class="card-block">
-                    <table class="table data-table stripe table-bordered table-responsive" width="100%">
-                            <thead> 
-                                <tr class="bg-success">
-                                    <th class="table-plus" id="t-border">Sl. NO.</th>
-                                    <th id="t-border">Name</th>
-                                    <th id="t-border">Mobile</th>
-                                    <th id="t-border">Gender</th>
-                                    <th id="t-border">Company Name</th>
-                                    <th id="t-border">Email</th>
-                                    <th id="t-border">Website</th>
-                                    <th id="t-border">Registration No.</th>
-                                    <th id="t-border">Address</th>
-                                    <th id="t-border" class="datatable-nosort">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-								<?php
-                                    if(is_array($clients)){$i = 0;
-                                        foreach($clients as $client){
-                                ?>
-                                <tr>
-                                    <td id="t-border"><?php echo ++$i; ?></td>
-                                    <td class="table-plus" id="t-border"><?php echo $client['name']; ?></td>
-                                    <td id="t-border"><?php echo $client['mobile']; ?></td>
-                                    <td id="t-border"><?php echo $client['gender']; ?></td>
-                                    <td id="t-border"><?php echo $client['company_name']; ?></td>
-                                    <td id="t-border"><?php echo $client['email']; ?></td>
-                                    <td id="t-border"><?php echo $client['c_website']; ?></td>
-                                    <td id="t-border"><?php echo $client['registration_no']; ?></td>
-                                    <td id="t-border"><?php echo $client['address'].' '.$client['district'].' '.$client['state']; ?></td>
-                                   <td id="t-border">
-                                        <a href="<?php echo base_url('clients/editclient/'.md5($client['id']));?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
-                                        <button type="button" class="btn btn-sm bg-danger delete" value="<?php echo $client['id']?>"><i class="ti-trash"></i> Delete</button>
-                                    </td>
-                                </tr>
-								<?php
+                	<div class="row">
+                    	<div class="col-md-12 table-responsive">
+                    		<table class="table data-table stripe table-bordered" width="100%">
+                                <thead> 
+                                    <tr class="bg-success">
+                                        <th class="table-plus" id="t-border">Sl. NO.</th>
+                                        <th id="t-border">Name</th>
+                                        <th id="t-border">Mobile</th>
+                                        <th id="t-border">Gender</th>
+                                        <th id="t-border">Company Name</th>
+                                        <th id="t-border">Email</th>
+                                        <th id="t-border">Website</th>
+                                        <th id="t-border">Registration No.</th>
+                                        <th id="t-border">Address</th>
+                                        <th id="t-border" class="datatable-nosort">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        if(is_array($clients)){$i = 0;
+                                            foreach($clients as $client){
+                                    ?>
+                                    <tr>
+                                        <td id="t-border"><?php echo ++$i; ?></td>
+                                        <td class="table-plus" id="t-border"><?php echo $client['name']; ?></td>
+                                        <td id="t-border"><?php echo $client['mobile']; ?></td>
+                                        <td id="t-border"><?php echo $client['gender']; ?></td>
+                                        <td id="t-border"><?php echo $client['company_name']; ?></td>
+                                        <td id="t-border"><?php echo $client['email']; ?></td>
+                                        <td id="t-border"><?php echo $client['c_website']; ?></td>
+                                        <td id="t-border"><?php echo $client['registration_no']; ?></td>
+                                        <td id="t-border"><?php echo $client['address'].' '.$client['district'].' '.$client['state']; ?></td>
+                                       <td id="t-border">
+                                            <a href="<?php echo base_url('clients/editclient/'.md5($client['id']));?>" class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</a>
+                                            <button type="button" class="btn btn-sm bg-danger delete" value="<?php echo $client['id']?>"><i class="ti-trash"></i> Delete</button>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                            }
                                         }
-                                    }
-                                ?>
-                        </tbody>
-                    </table>
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                </div>
             </div>
         </div>

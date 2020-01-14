@@ -4,7 +4,7 @@
             <div class="card">
             	<div class="card-header">
                 	<div class="pull-left">
-                        <a href="<?php echo base_url('clients/agreementlist'); ?>" class="btn btn-sm btn-primary"><i class="ti-list"></i> Agreement List </a>
+                        <a href="<?php echo base_url('clients/agreementlist'); ?>" class="btn btn-sm btn-primary"><i class="ti-view-list-alt"></i> Agreement List </a>
                     </div>
                 	<div class="pull-right">
                         <a href="<?php echo base_url('dashboard'); ?>" class="btn btn-sm btn-primary"><i class="ti-arrow-left"></i> BACK</a>
