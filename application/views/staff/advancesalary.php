@@ -8,7 +8,7 @@
                     </div>
                 </div>
                 <div class="card-block">
-                  <form action="<?php //echo base_url('clients/addclient');?>" method="POST">
+                  <form action="<?php echo base_url('staffsalary/add_advance');?>" method="POST">
                   	<div class="form-group row"> 
                         <label class="col-sm-4 text-danger">Staff Details</label>
                     </div> 
@@ -26,6 +26,7 @@
                             <div class="row form-group">
                                 <label class="col-sm-12 col-md-2 col-form-label">Name <span class="text-danger">*</span></label>
                                 <div class="col-sm-12 col-md-8">
+                                    <input type="hidden" id="emp_id" name="emp_id">
                                     <?php 
                                         $data = array('id'=> 'name','placeholder'=>'Name', 'class'=>'form-control', 'required'=>'true','readonly' => 'true');
                                         echo form_input($data); 
@@ -138,23 +139,25 @@
 <script>
 $(document).ready(function(e){
 	$('#staff_id').select2();
-    $('#emp_id').keyup(function(e){
-        var emp_id = $('#emp_id').val();
-		//alert(emp_id);
+    $('body').on('change','#staff_id',function(e){
+        var staff_id = $('#staff_id').val();
 		$.ajax({
-			url:"<?php //echo base_url('staff_salary/getstaff')?>",
+			url:"<?php echo base_url('staffsalary/getsinglestaff')?>",
 			method:"POST",
-			data:{emp_id:emp_id},
+			data:{staff_id:staff_id},
 			success:function(data){
-				//alert(data);
+				console.log(data);
 				var data = JSON.parse(data);
 				var id = data.id;
+				var baseurl = "<?php echo base_url('/')?>";
+				var pic = baseurl+data.photo;
 				$('#id').val(data.id);
 				$('#name').val(data.name);
+				$('#emp_id').val(data.emp_id);
 				$('#father').val(data.father);
 				$('#dob').val(data.dob);
 				$('#gender').val(data.gender);
-				$('#photo').attr('src',data.photo);
+				$('#photo').attr('src',pic);
 				$('#designation').val(data.designation);
 				$('#basic_salary').val(data.basic_salary);
 			}

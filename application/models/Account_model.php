@@ -63,6 +63,7 @@ class Account_model extends CI_Model{
 				$data = array();
 				$result['verify'] = true;
 				$token = md5($result['staff_id'].'.'.time().'.'.$result['name']);
+				$data['staff_id'] = $result['staff_id'];
 				$data['name'] = $result['name'];
 				$data['mobile'] = $result['mobile'];
 				$data['emp_id'] = $result['emp_id'];

@@ -89,4 +89,95 @@ class Staff_model extends CI_Model{
 		}
 	}
 	
+	public function add_advancesalary($data){
+		$advance = $data['advance'];
+		$data['all_total'] = -$advance;
+		$description = $data['description'];
+		$date = $data['date'];
+		$month = date('F',strtotime($date));
+		$year = date('Y',strtotime($date));
+		$data['month'] = $month;
+		$data['year'] = $year;
+		$data['type'] = 'Advance';
+		$name = $data['name'];
+		unset($data['advance'],$data['description'],$data['name']);
+		$insert = $this->db->insert('su_staffsalary',$data);
+		if($insert){
+			/*$ex['date'] = $date;
+			$ex['month'] = date('m',strtotime($date));
+			$ex['year'] = date('Y',strtotime($date));
+			$ex['expensehead_id'] = '2';
+			$ex['ac_holder'] = $name;
+			$ex['particular'] = $description;
+			$ex['type'] = 'Cash';
+			$ex['sal_type'] = 'Advance';
+			$ex['amount'] = $advance;
+			$expense = $this->db->insert('sk_expense',$ex);*/
+			return true;
+		}
+		else{
+			return $this->db->error();
+		}
+	}
+	
+	public function add_monthlysalary($data){
+		$data['type'] = 'Salary';
+		$date = date('Y-m-d');
+		$data['date'] = $date;	
+		$where = array('month' => $data['month'],'staff_id'=>$data['staff_id'],'type'=>$data['type']);
+		$query = $this->db->get_where('su_staffsalary',$where);
+		if($query->num_rows() == 0){
+			$name = $data['name'];
+			unset($data['name']);
+			$insert = $this->db->insert('su_staffsalary',$data);
+			$salary_id = $this->db->insert_id();
+			/*if(isset($insert)){
+			$month = date('m',strtotime($data['month']));
+			$ex['date'] = $date;
+			$ex['month'] = $month;
+			$ex['year'] = $data['year'];
+			$ex['salary_id'] = $salary_id;
+			$ex['expensehead_id'] = '1';
+			$ex['ac_holder'] = $name;
+			$ex['particular'] = 'Salary given by admin';
+			$ex['amount'] = $data['all_total'];
+			$ex['type'] = 'Cash';
+			$ex['sal_type'] = $data['type'];
+			$expense = $this->db->insert('sk_expense',$ex);*/
+			if($insert){
+				return $array['salary_id'] = $salary_id;
+			}
+			else{
+				 $this->db->error();
+			}
+		}
+		else{
+			return "Salary Already given to this staff for this month!";
+		}
+	}
+	
+	public function getsalary_details($where = array(),$types = 'all'){
+		$this->db->order_by('id','DESC');	
+		$this->db->where($where);
+		$query = $this->db->get('su_staffsalary');
+		if($types == 'all'){
+			$array = $query->result_array();
+		}
+		else{
+			$array = $query->row_array();
+		}
+		return $array;
+	}
+	
+	public function totaladvance($where = array(),$types = 'all'){
+		$this->db->select_sum('all_total');
+		$query = $this->db->get_where('su_staffsalary',$where);
+		if($types == 'all'){
+			$array = $query->result_array();
+		}
+		else{
+			$array = $query->row_array();
+		}
+		return $array;	
+	}
 }

@@ -28,6 +28,4 @@ class Login extends REST_Controller{
 				'message'=>'please provide Both Username and Password!'], REST_Controller::HTTP_OK);
 		}
 	}
-	
-	
 }
