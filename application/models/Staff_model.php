@@ -89,6 +89,52 @@ class Staff_model extends CI_Model{
 		}
 	}
 	
+	public function add_staffattendance($data){
+		if(is_array($data)){
+			$insertlocation = $this->db->insert('su_stafflocation',$data);
+			if($insertlocation){
+				$date = $data['date'];
+				$staff_id = $data['staff_id'];
+				
+				$day = (int)date('d',strtotime($date));
+				$column = "d_".$day;
+				$month = date('F',strtotime($date));
+				$year = date('Y',strtotime($date));
+				$insdata = $update = '';
+				
+				$value = '1';
+				$where = array('staff_id'=>$staff_id,'month'=>$month,'year'=>$year);
+				$query = $this->db->get_where('su_staff_attendance',$where);
+				if($query->num_rows() == 0){
+					$ins = array('staff_id'=>$staff_id,'month'=>$month,'year'=>$year,$column=>$value); 
+					$insdata = $this->db->insert('su_staff_attendance',$ins);
+					if($insdata){
+						return true;
+					}
+					else{
+						return $this->db->error();
+					}
+				}
+				else{
+					$upd = array($column=>$value);
+					$this->db->where($where);
+					$update = $this->db->update('su_staff_attendance',$upd);
+					if($update){
+						return true;
+					}
+					else{
+						return $this->db->error();
+					}
+				}
+				
+			}
+			else{
+				return $this->db->error();				
+			}
+		}
+	}
+	
+	
 	public function add_advancesalary($data){
 		$advance = $data['advance'];
 		$data['all_total'] = -$advance;

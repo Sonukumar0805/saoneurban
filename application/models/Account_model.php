@@ -85,16 +85,16 @@ class Account_model extends CI_Model{
 		$token=$data['token'];		
 		$otp=$data['otp'];
 		$where['token']=$token;
-		$query = $this->db->get_where("wh_users",$where);
+		$query = $this->db->get_where("su_stafflogin",$where);
 		$result=$query->row_array();
 		if(!empty($result)){
-			if(time()-strtotime($result['updated_on'])<900){
+			if(time()-strtotime($result['su_stafflogin'])<900){
 				$salt=$result['salt'];
 				$otp=md5($otp.SITE_SALT.$salt);
 				$hashotp=$result['otp'];
 				if($otp==$hashotp){
 					$this->db->where($where);
-					$this->db->update("wh_users",array("status"=>1));
+					$this->db->update("su_stafflogin",array("status"=>1));
 					$result['verify']=true;
 				}
 			}
