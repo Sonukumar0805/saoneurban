@@ -57,7 +57,7 @@ class Account_model extends CI_Model{
 		$result = $query->row_array();
 		if(!empty($result)){
 			$salt = $result['salt'];
-			$encpassword = md5($password.SITE_SALT.$salt);
+			$encpassword = md5($password.SITE_SALT.$salt); 
 			$hashpassword = $result['encpassword'];
 			if($encpassword == $hashpassword && $result['status']=='1'){
 				$data = array();
