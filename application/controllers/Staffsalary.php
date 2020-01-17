@@ -120,7 +120,7 @@ class Staffsalary extends CI_Controller{
 		$data['title'] = "Staff Salary Ledger";
 		$data['datatable'] = true;
 		$data['breadcrumb'] = array('dashboard' => 'Dashborad', 'staff/stafflist' => 'Stafflist');
-		$salaries = $this->Staff_model->getsalary_details(array('staff_id'=>$id,'type'=>'Salary'),'single');
+		$salaries = $this->Staff_model->getsalary_details(array('staff_id'=>$id,'type'=>'Salary'),'all');
 		if(empty($salaries)){
 			$this->session->set_flashdata('err_msg',"No data Found!");
 			redirect('staff/stafflist');
