@@ -242,7 +242,6 @@ class Staff_model extends CI_Model{
 		$this->db->order_by('id','DESC');	
 		$this->db->where($where);
 		$query = $this->db->get('su_staffsalary');
-		echo $this->db->last_query();
 		if($types == 'all'){
 			$array = $query->result_array();
 		}
