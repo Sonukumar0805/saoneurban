@@ -117,7 +117,24 @@
                                     <span class="pcoded-mcaret"></span>
                                 </a>
                             </li>
+                            <li class=" ">
+                                <a href="<?php echo base_url('staffsalary/stafflist');?>">
+                                    <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
+                                    <span class="pcoded-mtext" data-i18n="nav.basic-components.alert"> Salary Ledger</span>
+                                    <span class="pcoded-mcaret"></span>
+                                </a>
+                            </li>
                         </ul>
+                    </li>
+                </ul>
+                <div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms"><!--Forms &amp; Tables--></div>
+                <ul class="pcoded-item pcoded-left-item">
+                    <li>
+                        <a href="<?php echo base_url('staff/staffattendance');?>">
+                            <span class="pcoded-micon"><i class="ti-check-box"></i><b>S</b></span>
+                            <span class="pcoded-mtext" data-i18n="nav.form-components.main"> Staff Attendance</span>
+                            <span class="pcoded-mcaret"></span>
+                        </a>
                     </li>
                 </ul>
                 <!--<div class="pcoded-navigatio-lavel" data-i18n="nav.category.forms">Chart &amp; Maps</div>

@@ -22,13 +22,13 @@ class Staffattendance extends REST_Controller{
 		}
 		if($this->post('date')!== NULL){
 			$date =str_replace('/','-',$this->post('date'));
-			$data['date'] = date('Y-m-d H:i:s',strtotime($date));
+			$data['date'] = date('Y-m-d',strtotime($date));
 		}
 		else{
-			$data['date'] = date('Y-m-d H:i:s');
+			$data['date'] = date('Y-m-d');
 		}
 		if($this->post('photo')!=NULL && $this->post('location')!=NULL){
-			$upload_path = "./assets/images/staffattendance/";
+			$upload_path = "/assets/images/staffattendance/";
 			$photo ='';
 			if($this->post('photo')){
 				$photodata = base64_decode($this->post('photo'));
@@ -36,8 +36,11 @@ class Staffattendance extends REST_Controller{
 				write_file($photo, $photodata);
 			}
 			$data['staff_id'] = $user['id'];
+			$data['name'] = $user['name'];
+			$data['mobile'] = $user['mobile'];
 			$data['photo'] = $photo;
 			$data['location'] = $this->post('location');
+			$data['time'] = time();
 		  	$result = $this->Staff_model->add_staffattendance($data);
 		  	if($result === true){
 				 $this->response([

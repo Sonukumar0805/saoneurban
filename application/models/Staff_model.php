@@ -126,7 +126,6 @@ class Staff_model extends CI_Model{
 						return $this->db->error();
 					}
 				}
-				
 			}
 			else{
 				return $this->db->error();				
@@ -134,6 +133,43 @@ class Staff_model extends CI_Model{
 		}
 	}
 	
+	public function attendancelist($where = array()){
+		$this->db->where($where);
+		$query = $this->db->get('su_staff_attendance');
+		$atteadancelist = $query->result_array();
+		if(is_array($atteadancelist)){
+			foreach($atteadancelist as $key=>$list){
+				$staff_id = $list['staff_id'];
+				$month = $list['month'];
+				$year = $list['year'];
+				foreach($list as $ekey=>$value){
+					if($ekey=='month' ||$ekey == 'year'){continue;}
+					$day = str_replace('d_','',$ekey);
+					$days = $day.'-'.$month.'-'.$year;
+					$date = date('Y-m-d',strtotime($days));
+					$locationlist = $this-> presentlocation(array('staff_id'=>$staff_id,'date'=>$date),'single');
+					//echo PRE;
+					//print_r($locationlist);
+					if(!empty($locationlist)){
+						$atteadancelist[$key][$ekey] = $locationlist;
+					}
+				}				
+			}
+		}
+		return $atteadancelist;
+	}
+	
+	public function presentlocation($where = array(), $types='all'){
+		$this->db->where($where);
+		$query = $this->db->get('su_stafflocation');
+		if($types == 'all'){
+			$array = $query->result_array();
+		}
+		else{
+			$array = $query->row_array();
+		}
+		return $array;
+	}
 	
 	public function add_advancesalary($data){
 		$advance = $data['advance'];
