@@ -5,6 +5,7 @@ class Expense_model extends CI_Model{
 		parent::__construct(); 
 		$this->db->db_debug = false;
 	}
+	
 	public function addexpensehead($data){
 		$name = $data['name'];
 		$query = $this->db->get_where('su_expensehead',array('name'=>$name));
